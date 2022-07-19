@@ -14,7 +14,7 @@
 	<name>posts</name>
 	<description>Posts App Backend</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
