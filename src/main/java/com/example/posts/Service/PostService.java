@@ -16,8 +16,12 @@ public class PostService {
     @Autowired
     private PostRepository postRepository;
 
-    public List<Post> getPosts() {
-        return postRepository.findAll();
+    public List<Post> getPosts(String title) {
+        if (title == null) {
+            return postRepository.findAll();
+        } else {
+            return postRepository.findPostByTitleContaining(title);
+        }
     }
 
     public Optional<Post> getPostById(Long id) {

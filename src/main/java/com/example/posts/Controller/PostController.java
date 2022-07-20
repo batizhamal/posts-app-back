@@ -18,8 +18,8 @@ public class PostController {
     private PostService postService;
 
     @GetMapping("/posts")
-    public List<Post> getPosts() {
-        return postService.getPosts();
+    public List<Post> getPosts(@RequestParam(required = false) String title) {
+        return postService.getPosts(title);
     }
 
     @GetMapping("/posts/{id}")
@@ -42,4 +42,5 @@ public class PostController {
                             @RequestBody(required = false) Post post) {
         postService.updatePost(id, post);
     }
+
 }
